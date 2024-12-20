@@ -52,8 +52,18 @@ def est_premier(n):
 def premier_plus_proche(n):
     nombresPremiers = [11, 13, 17, 23]
     for i in range(len(nombresPremiers)-1):
-        if nombresPremiers[i] < n and nombresPremiers[i+1] > n:
+        if nombresPremiers[i] < n < nombresPremiers[i + 1]:
             return nombresPremiers[i+1]
 
 def resoudre_equation_lineaire(a, b):
     return -b/a
+
+def multiply(list):
+    result = list[0]
+    for i in list[1:]:
+        result *= list[i]
+
+def sustract(list):
+    result = list[0]
+    for i in list[1:]:
+        result -= list[i]
