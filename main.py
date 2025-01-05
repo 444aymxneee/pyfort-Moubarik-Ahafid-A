@@ -4,13 +4,17 @@ from enigme_pere_fouras import enigme_pere_fouras
 from epreuve_hasard import epreuve_hasard
 from epreuve_logique import epreuve_logique
 from epreuve_math import epreuve_math
+from epreuve_finale import epreuve_finale
 from fonctions_utiles import *
+import pygame, sys, time
 
 def main():
-    print("Bienvenue dans le Fort Boyard Simulator!")
-
+    introduction()
+    pygame.mixer.init()
+    pygame.mixer.music.load("Music.mp3")
+    pygame.mixer.music.play(loops=-1)
     equipe = composer_equipe()
-    cles_gagnees = 0
+    cles_gagnees = 3
 
     while cles_gagnees < 3:
         print("\n--- Nouvelle épreuve ---")
@@ -35,6 +39,17 @@ def main():
             cles_gagnees += 1
         else:
             print(f"Dommage {joueur['nom']}. Essayez une prochaine fois!")
+
+
+    pygame.mixer.music.fadeout(1000)
+    time.sleep(2)
+    pygame.mixer.music.load("Finale.wav")
+    pygame.mixer.music.play(loops=-1)
+    print("Félicitations! Vous avez atteint l'épreuve finale!")
+    gagne = epreuve_finale()
+    if gagne:
+        print("Vous avez gagné l'épreuve finale!")
+        print("FÉLECITATIONS! VOUS AVEZ GAGNÉS AU FORT BOYARD!")
 
 
 

@@ -67,3 +67,10 @@ def sustract(list):
     result = list[0]
     for i in list[1:]:
         result -= list[i]
+
+def introduction():
+    print("Bienvenue au Fort Boyard !")
+    print("Règles du jeu :")
+    print("- Le joueur doit accomplir des épreuves pour gagner des clés et déverrouiller la salle du trésor.")
+    print("- L'objectif est de ramasser trois clés pour accéder à la salle du trésor.")
+    print("\nBonne chance !")
