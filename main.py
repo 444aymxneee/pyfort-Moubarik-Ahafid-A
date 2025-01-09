@@ -14,7 +14,7 @@ def main():
     pygame.mixer.music.load("Music.mp3")
     pygame.mixer.music.play(loops=-1)
     equipe = composer_equipe()
-    cles_gagnees = 3
+    cles_gagnees = 0
 
     while cles_gagnees < 3:
         print("\n--- Nouvelle épreuve ---")
